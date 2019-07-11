@@ -47,7 +47,6 @@ export default class extends Component{
           autoplay
           autoplayDelay={3}
           autoplayLoop
-          index={1}
           showPagination
           paginationDefaultColor={'white'}
           paginationActiveColor={'red'}

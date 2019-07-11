@@ -1,5 +1,6 @@
 const INITIAL_STATE = {
     counter: 0,
+    total: 0
 };
 
 export default function counter(state = INITIAL_STATE , actions){

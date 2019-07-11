@@ -6,7 +6,6 @@ import FormProduct from '../pages/formProduct';
 import { createStackNavigator } from "react-navigation";
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import MenuButtom from '../components/menuButton'
-import HomeScreen from '../pages/homeScreen'
 
 const AppNavigator = createStackNavigator({
     Main: {
@@ -21,9 +20,6 @@ const AppNavigator = createStackNavigator({
     },
     FormProduct:{
         screen: FormProduct
-    },
-    HomeScreen:{
-      screen: HomeScreen
     }
   }
 );
