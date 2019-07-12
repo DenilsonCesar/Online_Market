@@ -1,18 +1,17 @@
 const INITIAL_STATE = {
-    counter: 1,
+    counter: 0,
 };
 
-export default function counter(state = INITIAL_STATE , actions){
+export default function counter(state = INITIAL_STATE , action){
     if(state.counter  < 0){
         state.counter = 0
     }
-    switch(actions.type) {
+    switch(action.type) {
         case 'INCREMENT':
-            return {counter: state.counter + 1};
+            return {...state, counter: state.counter + 1};
         case 'DECREMENT':
-            return {counter: state.counter - 1};
+            return {...state, counter: state.counter -1};
         default:
             return state;
     }
-    
 }

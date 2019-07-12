@@ -59,9 +59,16 @@ const INITIAL_STATE = {
         price: 2.89,
         image: require('../images/skol.jpg')
     },
+    text: 'esse texto'
 }
 
-
 export default function formProduct(state = INITIAL_STATE, actions){
+    switch(actions.type){
+        case 'ADD':
+            return {...state, description: actions.description, 
+                price: actions.price, image: actions.image }
+        case 'REMOVE':
+            return {...state.filter(item => item.id !== action.id)}
+    }
     return state;
 }

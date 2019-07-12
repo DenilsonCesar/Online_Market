@@ -23,6 +23,8 @@ import {
 
 import { connect } from 'react-redux'
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { addProduct } from '../actions/productActions'
+import { add, remove } from '../actions/qtdProdActions'
 
 class formProduct extends Component {
     render(){
@@ -67,7 +69,7 @@ class formProduct extends Component {
                     </CardPrice>
                 </ViewPrin>
             <ViewDesc>
-                <TouchableOpacity onPress={() => this.props.addItemToCart(this.props.navigation.getParam('prodPrice'))}
+                <TouchableOpacity onPress={(description, price, image) => this.props.addProduct(console.log(this.props.addProduct()), description, price, image)}
                     style={{
                         backgroundColor: 'red',
                         borderRadius: 10,
@@ -93,14 +95,8 @@ class formProduct extends Component {
 }}
 
 const mapStateToProps = (state) => ({
-        counter: state.qtdReducers.counter,
-
+    counter: state.qtdReducers.counter,
+    addvalue: state.productReducers.payload
 });
 
-const mapDispatchToProps = (dispatch) =>({
-    add: () => dispatch({ type: 'INCREMENT'}),
-    remove: () => dispatch({ type: 'DECREMENT'}),
-    addItemToCart: (product) => dispatch({ type: 'ADD_TO_CART', payload: product })
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(formProduct);
+export default connect(mapStateToProps, {addProduct, add, remove})(formProduct);

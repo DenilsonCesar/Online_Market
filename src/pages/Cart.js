@@ -6,24 +6,20 @@ import {
 } from './Styles_Main'
 
 import { connect } from 'react-redux';
-import formProduct from './formProduct'
 
 class Cart extends Component {
     render(){
         return (
             <ContainerPrincipal>
-                 <View>{this.props.items.length < 0 ? 
-                    <View formProduct={this.props.items}/>
-                    : <ContainerItens>
-                    </ContainerItens>
-                }</View>    
+                 <View>{this.props.getParam('prodDesc')}
+                    </View>    
             </ContainerPrincipal>
         )
     }
 }
  
 const mapStateToProps = state => ({
-    items: state.productReducers
+    //addvalue: state.productReducers.description
 });
 
 const mapDispatchToProps = (dispatch) => ({
