@@ -5,7 +5,7 @@ import TopTitle from '../components/Title'
 import Slider from '../components/SliderBanner'
 import { 
         Container,
-        TextPrince,
+        TextPrice,
         BorderItens,
         RowsProducts, 
         TextItens, 
@@ -28,7 +28,7 @@ const Main = (props)=> {
                         <RowsProducts>
                             <TouchableOpacity 
                                 onPress={() =>
-                                    props.navigation.navigate('FormProduct', {prodDesc: props.prod01.description, prodPrince: props.prod01.prince, prodImg: props.prod01.image})  
+                                    props.navigation.navigate('FormProduct', {prodDesc: props.prod01.description, prodPrice: props.prod01.price, prodImg: props.prod01.image})  
                                 }>
                                 <BorderItens>       
                                     <ViewItens>
@@ -38,16 +38,16 @@ const Main = (props)=> {
                                         <Image style={{width: 120, height: 100}} 
                                             source={ props.prod01.image }
                                         />
-                                        <TextPrince>
-                                            R$ {props.prod01.prince}
-                                        </TextPrince>
+                                        <TextPrice>
+                                            R$ {props.prod01.price}
+                                        </TextPrice>
 
                                     </ViewItens>
                                 </BorderItens>
                             </TouchableOpacity>
                             <TouchableOpacity 
                                 onPress={() => 
-                                    props.navigation.navigate('FormProduct', {prodDesc: props.prod02.description, prodPrince: props.prod02.prince, prodImg: props.prod02.image})
+                                    props.navigation.navigate('FormProduct', {prodDesc: props.prod02.description, prodPrice: props.prod02.price, prodImg: props.prod02.image})
                                 }>
                                 <BorderItens>
                                     <ViewItens>
@@ -57,9 +57,9 @@ const Main = (props)=> {
                                         <Image style={{width: 120, height: 100}} 
                                         source={ props.prod02.image}
                                         />
-                                        <TextPrince>
-                                            R$ {props.prod02.prince}
-                                        </TextPrince>
+                                        <TextPrice>
+                                            R$ {props.prod02.price}
+                                        </TextPrice>
 
                                     </ViewItens>
                                 </BorderItens>
@@ -68,7 +68,7 @@ const Main = (props)=> {
                         <RowsProducts>
                             <TouchableOpacity 
                                 onPress={() => 
-                                    props.navigation.navigate('FormProduct', {prodDesc: props.prod03.description, prodPrince: props.prod03.prince, prodImg: props.prod03.image})
+                                    props.navigation.navigate('FormProduct', {prodDesc: props.prod03.description, prodPrice: props.prod03.price, prodImg: props.prod03.image})
                                 }>
                                 <BorderItens>
                                     <ViewItens>
@@ -78,16 +78,16 @@ const Main = (props)=> {
                                         <Image style={{width: 120, height: 100}} 
                                             source={props.prod03.image}
                                         />        
-                                        <TextPrince>
-                                            R$ {props.prod03.prince}
-                                        </TextPrince>
+                                        <TextPrice>
+                                            R$ {props.prod03.price}
+                                        </TextPrice>
 
                                     </ViewItens>
                                 </BorderItens>
                             </TouchableOpacity>
                             <TouchableOpacity 
                                 onPress={() => 
-                                    props.navigation.navigate('FormProduct', {prodDesc: props.prod04.description, prodPrince: props.prod04.prince, prodImg: props.prod04.image})
+                                    props.navigation.navigate('FormProduct', {prodDesc: props.prod04.description, prodPrice: props.prod04.price, prodImg: props.prod04.image})
                                 }>
                                 <BorderItens>
                                     <ViewItens>
@@ -97,9 +97,9 @@ const Main = (props)=> {
                                         <Image style={{width: 120, height: 100}} 
                                         source={props.prod04.image}
                                         />
-                                        <TextPrince>
-                                            R$ {props.prod04.prince}
-                                        </TextPrince>
+                                        <TextPrice>
+                                            R$ {props.prod04.price}
+                                        </TextPrice>
 
                                     </ViewItens>
                                 </BorderItens>
@@ -111,7 +111,7 @@ const Main = (props)=> {
                         <RowsProducts>
                             <TouchableOpacity 
                                 onPress={() => 
-                                    props.navigation.navigate('FormProduct', {prodDesc: props.prod05.description, prodPrince: props.prod05.prince, prodImg: props.prod05.image})
+                                    props.navigation.navigate('FormProduct', {prodDesc: props.prod05.description, prodPrice: props.prod05.price, prodImg: props.prod05.image})
                                 }>
                                 <BorderItens>
                                     <ViewItens>
@@ -121,16 +121,16 @@ const Main = (props)=> {
                                         <Image style={{width: 120, height: 100}} 
                                         source={props.prod05.image}
                                         />
-                                        <TextPrince>
-                                            R$ {props.prod05.prince}
-                                        </TextPrince>
+                                        <TextPrice>
+                                            R$ {props.prod05.price}
+                                        </TextPrice>
 
                                     </ViewItens>
                                 </BorderItens>
                             </TouchableOpacity>
                             <TouchableOpacity 
                                 onPress={() => 
-                                    props.navigation.navigate('FormProduct', {prodDesc: props.prod06.description, prodPrince: props.prod06.prince, prodImg: props.prod06.image})
+                                    props.navigation.navigate('FormProduct', {prodDesc: props.prod06.description, prodPrice: props.prod06.price, prodImg: props.prod06.image})
                                 }>
                                 <BorderItens>
                                     <ViewItens>
@@ -140,9 +140,9 @@ const Main = (props)=> {
                                         <Image style={{width: 120, height: 100}} 
                                         source={props.prod06.image}
                                         />
-                                        <TextPrince> 
-                                            R$ {props.prod06.prince} 
-                                        </TextPrince>
+                                        <TextPrice> 
+                                            R$ {props.prod06.price} 
+                                        </TextPrice>
 
                                     </ViewItens>
                                 </BorderItens>
@@ -151,7 +151,7 @@ const Main = (props)=> {
                         <RowsProducts>
                             <TouchableOpacity 
                                 onPress={() => 
-                                    props.navigation.navigate('FormProduct', {prodDesc: props.prod07.description, prodPrince: props.prod07.prince, prodImg: props.prod07.image})
+                                    props.navigation.navigate('FormProduct', {prodDesc: props.prod07.description, prodPrice: props.prod07.price, prodImg: props.prod07.image})
                                 }>
                                 <BorderItens>
                                     <ViewItens>
@@ -161,16 +161,16 @@ const Main = (props)=> {
                                         <Image style={{width: 120, height: 100}} 
                                         source={props.prod07.image}
                                         />
-                                        <TextPrince> 
-                                            R$ {props.prod07.prince} 
-                                        </TextPrince>
+                                        <TextPrice> 
+                                            R$ {props.prod07.price} 
+                                        </TextPrice>
 
                                     </ViewItens>
                                 </BorderItens>
                             </TouchableOpacity>
                             <TouchableOpacity 
                                 onPress={() => 
-                                    props.navigation.navigate('FormProduct', {prodDesc: props.prod08.description, prodPrince: props.prod08.prince, prodImg: props.prod08.image})
+                                    props.navigation.navigate('FormProduct', {prodDesc: props.prod08.description, prodPrice: props.prod08.price, prodImg: props.prod08.image})
                                 }>
                                 <BorderItens>
                                     <ViewItens>
@@ -180,9 +180,9 @@ const Main = (props)=> {
                                         <Image style={{width: 120, height: 100}} 
                                         source={props.prod08.image}
                                         />
-                                    <TextPrince> 
-                                        R$ {props.prod08.prince} 
-                                    </TextPrince>       
+                                    <TextPrice> 
+                                        R$ {props.prod08.price} 
+                                    </TextPrice>       
                                     </ViewItens>
                                 </BorderItens>
                             </TouchableOpacity>
@@ -193,7 +193,7 @@ const Main = (props)=> {
                         <RowsProducts>
                             <TouchableOpacity 
                                 onPress={() => 
-                                    props.navigation.navigate('FormProduct', {prodDesc: props.prod09.description, prodPrince: props.prod09.prince, prodImg: props.prod09.image})
+                                    props.navigation.navigate('FormProduct', {prodDesc: props.prod09.description, prodPrice: props.prod09.price, prodImg: props.prod09.image})
                                 }>
                                 <BorderItens>
                                     <ViewItens>
@@ -203,16 +203,16 @@ const Main = (props)=> {
                                         <Image style={{width: 120, height: 100}} 
                                         source={props.prod09.image}
                                         />
-                                        <TextPrince> 
-                                            R$ {props.prod09.prince} 
-                                        </TextPrince>
+                                        <TextPrice> 
+                                            R$ {props.prod09.price} 
+                                        </TextPrice>
 
                                     </ViewItens>
                                 </BorderItens>
                         </TouchableOpacity>
                         <TouchableOpacity 
                             onPress={() => 
-                                props.navigation.navigate('FormProduct', {prodDesc: props.prod10.description, prodPrince: props.prod10.prince, prodImg: props.prod10.image})
+                                props.navigation.navigate('FormProduct', {prodDesc: props.prod10.description, prodPrice: props.prod10.price, prodImg: props.prod10.image})
                             }>
                             <BorderItens>
                                 <ViewItens>
@@ -222,9 +222,9 @@ const Main = (props)=> {
                                     <Image style={{width: 120, height: 100}} 
                                         source={props.prod10.image}
                                     />
-                                    <TextPrince> 
-                                        R$ {props.prod10.prince} 
-                                    </TextPrince>
+                                    <TextPrice> 
+                                        R$ {props.prod10.price} 
+                                    </TextPrice>
                                 </ViewItens>
                             </BorderItens>
                         </TouchableOpacity>

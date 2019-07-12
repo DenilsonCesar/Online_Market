@@ -56,7 +56,7 @@ export const TextItens = styled.Text.attrs({
     margin-bottom: 5px;
 `;
 
-export const TextPrince = styled.Text`
+export const TextPrice = styled.Text`
     text-align: center;
     justify-content: center;
     font-size: 22px;
@@ -77,7 +77,7 @@ export const TextPrince = styled.Text`
 
 //Tela fromProduct
 
-export const CardPrince = styled.View`
+export const CardPrice = styled.View`
     flex-direction: column;
 `;
 

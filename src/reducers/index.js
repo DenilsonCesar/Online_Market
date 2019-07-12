@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux'
 import productReducers from './productReducers'
-import cartReducers from './cartReducers'
+import qtdReducers from './quantityProductsReducers'
+import addItemsReducers from './addItemsReducers'
 
 export default combineReducers({
     productReducers: productReducers,
-    cartReducers: cartReducers
+    qtdReducers: qtdReducers,
+    addItemsReducers: addItemsReducers
     
 })

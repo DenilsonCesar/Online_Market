@@ -16,11 +16,10 @@ import {
         ViewPrin,
         TextValue,
         CardTop,
-        CardPrince,
+        CardPrice,
         TextTotal,
         ViewTotal,
 } from './Styles_Main'
-
 
 import { connect } from 'react-redux'
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -33,13 +32,13 @@ class formProduct extends Component {
                 <ViewPrin>
                     <Image style={{width:250, height:280, marginRight: 5}}
                     source={this.props.navigation.getParam('prodImg')}/>
-                    <CardPrince>
+                    <CardPrice>
                         <CardTop>
                             <TextCard>{this.props.navigation.getParam('prodDesc')}</TextCard>
                         </CardTop>
-                                <TextValue>R$ {this.props.navigation.getParam('prodPrince')}</TextValue>
+                                <TextValue>R$ {this.props.navigation.getParam('prodPrice')}</TextValue>
                             <CardQuant>
-                                <TouchableOpacity onPress={() => this.props.remove(console.log(this.props.counter))}>
+                                <TouchableOpacity onPress={() => this.props.remove()}>
                                     <Icon name='navigate-before' size={50} color="blue"/>
                                 </TouchableOpacity>
                                     <Text 
@@ -50,11 +49,11 @@ class formProduct extends Component {
                                             fontSize: 30, 
                                             borderWidth: 1, 
                                             borderRadius: 8,
-                                            paddingTop: 2
+                                            paddingTop: 2,
                                         }}>
                                         {this.props.counter < 0 ? this.props.counter = 0: this.props.counter}
                                     </Text>
-                                <TouchableOpacity onPress={() => this.props.add(console.log(this.props.counter))}>
+                                <TouchableOpacity onPress={() => this.props.add()}>
                                     <Icon name='navigate-next' size={50} color="blue"/>
                                 </TouchableOpacity>
                             </CardQuant>
@@ -62,13 +61,13 @@ class formProduct extends Component {
                                     <TextTotal>Total</TextTotal>
                                     <Text 
                                         style={{fontSize: 28, paddingLeft: 40}}>
-                                            R$ {this.props.prod01.prince}{ this.props.counter}                             
+                                            R$ {this.props.counter > 0 ? this.props.navigation.getParam('prodPrice') * this.props.counter : this.props.navigation.getParam('prodPrice')}                             
                                     </Text> 
                             </ViewTotal>
-                    </CardPrince>
+                    </CardPrice>
                 </ViewPrin>
             <ViewDesc>
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('prodPrince')}
+                <TouchableOpacity onPress={() => this.props.addItemToCart(this.props.navigation.getParam('prodPrice'))}
                     style={{
                         backgroundColor: 'red',
                         borderRadius: 10,
@@ -93,17 +92,15 @@ class formProduct extends Component {
     )
 }}
 
-//export default formProduct;
-
 const mapStateToProps = (state) => ({
-        counter: state.cartReducers.counter,
-        prod01: state.productReducers.prod01
-        //total: state.cartReducers.reduce((subtotal, item) => subtotal + item.this.props.prince, 0)
+        counter: state.qtdReducers.counter,
+
 });
 
 const mapDispatchToProps = (dispatch) =>({
     add: () => dispatch({ type: 'INCREMENT'}),
     remove: () => dispatch({ type: 'DECREMENT'}),
+    addItemToCart: (product) => dispatch({ type: 'ADD_TO_CART', payload: product })
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(formProduct);

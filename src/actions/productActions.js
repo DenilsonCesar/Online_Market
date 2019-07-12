@@ -1,8 +1,8 @@
-export const addProduct = (description, prince, image) => {
+export const addProduct = (description, price, image) => {
     return {
         type: 'ADD',
         description,
-        prince,
+        price,
         image
     }
 }

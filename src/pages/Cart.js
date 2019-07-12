@@ -5,29 +5,29 @@ import {
         ContainerPrincipal 
 } from './Styles_Main'
 
+import { connect } from 'react-redux';
+import formProduct from './formProduct'
 
-const Cart = (props) => {
+class Cart extends Component {
+    render(){
         return (
             <ContainerPrincipal>
-                <ContainerItens>
-                    <Text>{props.navigation.getParam('prodDesc')}</Text>
-                </ContainerItens>
-                <ContainerItens>
-                    <Text>aaaaaa</Text>
-                </ContainerItens>
-                <ContainerItens>
-                    <Text>aaaaaa</Text>
-                </ContainerItens>
-                <ContainerItens>
-                    <Text>aaaaaa</Text>
-                </ContainerItens>
-                <ContainerItens>
-                    <Text>aaaaaa</Text>
-                </ContainerItens>
-
+                 <View>{this.props.items.length < 0 ? 
+                    <View formProduct={this.props.items}/>
+                    : <ContainerItens>
+                    </ContainerItens>
+                }</View>    
             </ContainerPrincipal>
         )
+    }
 }
-    
+ 
+const mapStateToProps = state => ({
+    items: state.productReducers
+});
 
-export default Cart;
+const mapDispatchToProps = (dispatch) => ({
+    removeItem: (product) => dispatch({ type: 'REMOVE_FROM_CART', payload: product })
+});
+
+export default connect(mapStateToProps,mapDispatchToProps)(Cart);
