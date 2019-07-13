@@ -23,11 +23,26 @@ import {
 
 import { connect } from 'react-redux'
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { addProduct } from '../actions/productActions'
+import { addProductCart } from '../actions/productActions'
 import { add, remove } from '../actions/qtdProdActions'
 
 class formProduct extends Component {
+    constructor(props){
+        super(props);
+            this.state = {
+                counter: 1
+            }
+    }
+
+    _addProductCart(){
+        const { description, price, image } = this.props;
+        this.props.addProductCart({ description, price, image })
+    }
+
     render(){
+        if(this.state.counter < 1){
+            this.state.counter = 1;
+        }
     return(
         <ContainerProduct>
             <Text>aaaaaaaaaaaaaa</Text>
@@ -40,7 +55,7 @@ class formProduct extends Component {
                         </CardTop>
                                 <TextValue>R$ {this.props.navigation.getParam('prodPrice')}</TextValue>
                             <CardQuant>
-                                <TouchableOpacity onPress={() => this.props.remove()}>
+                                <TouchableOpacity onPress={() => this.setState({ counter: this.state.counter -1 })}>
                                     <Icon name='navigate-before' size={50} color="blue"/>
                                 </TouchableOpacity>
                                     <Text 
@@ -53,9 +68,9 @@ class formProduct extends Component {
                                             borderRadius: 8,
                                             paddingTop: 2,
                                         }}>
-                                        {this.props.counter < 0 ? this.props.counter = 0: this.props.counter}
+                                        {this.state.counter}
                                     </Text>
-                                <TouchableOpacity onPress={() => this.props.add()}>
+                                <TouchableOpacity onPress={() => this.setState({ counter: this.state.counter +1 })}>
                                     <Icon name='navigate-next' size={50} color="blue"/>
                                 </TouchableOpacity>
                             </CardQuant>
@@ -63,13 +78,13 @@ class formProduct extends Component {
                                     <TextTotal>Total</TextTotal>
                                     <Text 
                                         style={{fontSize: 28, paddingLeft: 40}}>
-                                            R$ {this.props.counter > 0 ? this.props.navigation.getParam('prodPrice') * this.props.counter : this.props.navigation.getParam('prodPrice')}                             
+                                            R$ {this.state.counter > 0 ? this.props.navigation.getParam('prodPrice') * this.state.counter : this.props.navigation.getParam('prodPrice')}                             
                                     </Text> 
                             </ViewTotal>
                     </CardPrice>
                 </ViewPrin>
             <ViewDesc>
-                <TouchableOpacity onPress={(description, price, image) => this.props.addProduct(console.log(this.props.addProduct()), description, price, image)}
+                <TouchableOpacity onPress={() => this._addProductCart(console.log(this._addProductCart()))}
                     style={{
                         backgroundColor: 'red',
                         borderRadius: 10,
@@ -95,8 +110,7 @@ class formProduct extends Component {
 }}
 
 const mapStateToProps = (state) => ({
-    counter: state.qtdReducers.counter,
     addvalue: state.productReducers.payload
 });
 
-export default connect(mapStateToProps, {addProduct, add, remove})(formProduct);
+export default connect(mapStateToProps, {addProductCart, add, remove})(formProduct);

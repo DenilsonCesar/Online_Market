@@ -1,4 +1,5 @@
-const INITIAL_STATE = {
+//exemplo simples para endender o inicio do redux
+/*const INITIAL_STATE = {
     counter: 0,
 };
 
@@ -14,4 +15,4 @@ export default function counter(state = INITIAL_STATE , action){
         default:
             return state;
     }
-}
+}*/

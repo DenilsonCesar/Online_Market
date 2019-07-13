@@ -1,4 +1,4 @@
-export const addProduct = (description, price, image) => {
+export const addProductCart = ({ description, price, image }) => {
     return {
         type: 'ADD',
         description: description,
