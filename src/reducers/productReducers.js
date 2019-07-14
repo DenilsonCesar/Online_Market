@@ -65,7 +65,7 @@ const INITIAL_STATE = {
 export default function formProduct(state = INITIAL_STATE, actions){
     switch(actions.type){
         case 'ADD':
-            return {...state, description: actions.description, 
+            return {...state, prod01: actions.prod01, 
                 price: actions.price, image: actions.image }
         case 'REMOVE':
             return {...state.filter(item => item.id !== action.id)}

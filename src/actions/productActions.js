@@ -1,8 +1,9 @@
-export const addProductCart = ({ description, price, image }) => {
+export const addProductCart = ({ description, price, image, counter }) => {
     return {
         type: 'ADD',
         description: description,
         price: price,
-        image: image
+        image: image,
+        count: counter
     }
 }

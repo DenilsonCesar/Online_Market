@@ -24,7 +24,7 @@ import {
 import { connect } from 'react-redux'
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { addProductCart } from '../actions/productActions'
-import { add, remove } from '../actions/qtdProdActions'
+//import { add, remove } from '../actions/qtdProdActions'
 
 class formProduct extends Component {
     constructor(props){
@@ -34,26 +34,35 @@ class formProduct extends Component {
             }
     }
 
+    componentDidMount(){
+        
+    }
     _addProductCart(){
-        const { description, price, image } = this.props;
-        this.props.addProductCart({ description, price, image })
+        //const { description, price, image } = this.props;
+        ///const count = this.state.counter;
+        this.props.addProductCart(description, price, image)
     }
 
     render(){
         if(this.state.counter < 1){
             this.state.counter = 1;
         }
+
+        const description = this.props.navigation.getParam('prodDesc')
+        const image = this.props.navigation.getParam('prodImg');
+        const price = this.props.navigation.getParam('prodPrice');
+
     return(
         <ContainerProduct>
             <Text>aaaaaaaaaaaaaa</Text>
                 <ViewPrin>
                     <Image style={{width:250, height:280, marginRight: 5}}
-                    source={this.props.navigation.getParam('prodImg')}/>
+                    source={image}/>
                     <CardPrice>
                         <CardTop>
-                            <TextCard>{this.props.navigation.getParam('prodDesc')}</TextCard>
+                            <TextCard>{description}</TextCard>
                         </CardTop>
-                                <TextValue>R$ {this.props.navigation.getParam('prodPrice')}</TextValue>
+                                <TextValue>R$ {price}</TextValue>
                             <CardQuant>
                                 <TouchableOpacity onPress={() => this.setState({ counter: this.state.counter -1 })}>
                                     <Icon name='navigate-before' size={50} color="blue"/>
@@ -84,7 +93,7 @@ class formProduct extends Component {
                     </CardPrice>
                 </ViewPrin>
             <ViewDesc>
-                <TouchableOpacity onPress={() => this._addProductCart(console.log(this._addProductCart()))}
+                <TouchableOpacity onPress={() => console.log(addProductCart(description, price, image))}
                     style={{
                         backgroundColor: 'red',
                         borderRadius: 10,
@@ -110,7 +119,7 @@ class formProduct extends Component {
 }}
 
 const mapStateToProps = (state) => ({
-    addvalue: state.productReducers.payload
+    description : state.productReducers.description
 });
 
-export default connect(mapStateToProps, {addProductCart, add, remove})(formProduct);
+export default connect(mapStateToProps, {addProductCart})(formProduct);
